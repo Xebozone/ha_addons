@@ -14,7 +14,7 @@ deploy_challenge() {
     local DOMAIN="${1}" TOKEN_FILENAME="${2}" TOKEN_VALUE="${3}" ALIAS
     ALIAS="$(jq --raw-output --exit-status "[.aliases[]|{(.domain):.alias}]|add.\"$DOMAIN\"" $CONFIG_PATH)" || ALIAS="$DOMAIN"
 
-	echo "Processing domain: $DOMAIN"
+    echo "Processing domain: $DOMAIN"
 	echo ""
 
     # This hook is called once for every domain that needs to be
